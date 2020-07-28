@@ -44,7 +44,12 @@ require_once('connection.php');
 
                          <br>
 
-
+                         <?php
+            if (isset($_GET["msg"]) && $_GET["msg"] == 'failed') {
+              echo "<strong style=color:red;>Wrong Staff Number / Password!</strong>";
+              
+              }
+              ?>
 
                         <!-- <button class="btn btn-primary btn-block text-white" type="submit" name="btnLogStu">Login</button> -->
                         <input class="btn btn-success btn-block text-white" type="submit" name="btnLogStaff" value="Login">

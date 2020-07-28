@@ -3,38 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sticker Application</title>
+    <title>Document</title>
+    
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script type="text/javascript" src="scripts/jquery.form.js"></script>
+<script type="text/javascript" src="scripts/upload.js"></script>
+<link type="text/css" rel="stylesheet" href="style.css" />
+
 </head>
 <body>
-    <h1>Hello</h1>
-    <form action="upload.php" method="post" enctype="multipart/form-data">
-    Select Image File to Upload:
-    <input type="file" name="file">
-    <input type="submit" name="submit" value="Upload">
+
+
+<div class="container">
+<h2>Upload Multiple Images using jQuery, Ajax and PHP</h2>
+<br>
+<br>
+<form method="post" name="upload_form" id="upload_form" enctype="multipart/form-data" action="upload.php">
+<label>Choose Multiple Images to Upload</label>
+<br>
+<br>
+<input type="file" name="upload_images[]" id="image_file" multiple >
+<div class="file_uploading hidden">
+<label> </label>
+<img src="uploading.gif" alt="Uploading......"/>
+</div>
 </form>
-
-
-
-<?php
-// Include the database configuration file
-require_once("connection.php");
-mysqli_select_db($conn , "sticker");
-
-
-// Get images from the database
-// $query = $db->query("SELECT * FROM images ORDER BY uploaded_on DESC");
-
-    $query = mysqli_query($conn, "SELECT * FROM images ORDER BY uploaded_on DESC");
-
-if($query->num_rows > 0){
-    while($row = $query->fetch_assoc()){
-        $imageURL = 'uploads/'.$row["file_name"];
-?>
-    <img src="<?php echo $imageURL; ?>" alt="" />
-<?php }
-}else{ ?>
-    <p>No image(s) found...</p>
-<?php } ?>
-
+<div id="uploaded_images_preview"></div>
+</div>
+    
 </body>
 </html>

@@ -31,7 +31,7 @@ if (isset($_POST["btnRegStu"])) {
         $_SESSION['matric_number'] = $matric_number;
         $_SESSION['success'] = "You are now logged in";
     
-        header('location: logsheet.php');
+        header('location: indexStudent.php');
     
     }
     

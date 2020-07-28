@@ -1,0 +1,27 @@
+ <?php
+                            require_once("connection.php");
+                            $i = 1;
+                            $getChecks = "SELECT * FROM checks";
+                            $result = $conn->query($getChecks);
+
+                            if ($result->num_rows > 0) {
+                                //print maklumat
+                                while ($row = $result->fetch_assoc()) {
+                    
+                            ?>
+                                <tr>
+                                    <td><?= $i ?></td>
+                                    <td><?= $row['stuMatric'] ?></td>
+                                    <td><?= $row['stuStat'] ?></td>
+                                    <td><?= $row['stuReason'] ?></td>
+                                    <td><a href="actionEdit.php?GetID=<?php echo $stuMatric ?>">Edit</a></td>
+                                    <td><a href="actionDelete.php?Del=<?php echo $stuMatric ?>">Delete</a></td>
+
+                                  
+</td>
+                                </tr>
+                            <?php
+                                $i++;
+                                }
+                            }
+                            ?>

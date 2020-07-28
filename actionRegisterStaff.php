@@ -23,7 +23,7 @@ if (isset($_POST["btnRegStaff"])) {
         $_SESSION['staff_ID'] = $staff_ID;
         $_SESSION['success'] = "You are now logged in";
     
-        header('location: logsheet.php');
+        header('location: indexStaff.php');
     
     }
     

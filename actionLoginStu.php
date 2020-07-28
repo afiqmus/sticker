@@ -2,6 +2,8 @@
 require_once("connection.php");
 
 if (isset($_POST["btnLogStu"])) {
+
+    
    
     $matric_number = $_POST["matric_number"];
     $password_1 = md5($_POST["password_1"]);
@@ -20,15 +22,14 @@ if (isset($_POST["btnLogStu"])) {
     while($row = mysqli_fetch_array($results)){
         if($row['stuMatric'] == $matric_number && $row['stuPass'] == $password_1){
             $_SESSION['matric_number'] = $matric_number;
-            header("Location: logsheet.php");
+            header("Location: indexStudent.php");
                 exit;
         }
 
         else{
             
 
-            echo '<script type="text/javascript">alert(\'Wrong matric number or password\')</script>';
-
+           
             header("Location: stuLogin.php?msg=failed");
 
         }
@@ -37,6 +38,8 @@ if (isset($_POST["btnLogStu"])) {
 
     }
 }
+
+
 
    
 ?>

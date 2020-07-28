@@ -1,10 +1,11 @@
 body {
-background-color: lightblue;
+background-color: rgb(68, 183, 255);
 }
 .card-header {
     background-color: dodgerblue;
     text-align: center;
     font-size: 25px;
+    
 }
 
 .card {

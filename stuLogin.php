@@ -39,8 +39,16 @@ require_once('connection.php');
                         <input type="checkbox" onclick="myFunction()"> Show Password
 
                         </div>
+
                         <br>
 
+                        <?php
+            if (isset($_GET["msg"]) && $_GET["msg"] == 'failed') {
+              echo "<strong style=color:red;>Wrong Matric Number / Password!</strong>";
+              
+              }
+              ?>
+             
 
                         <!-- <button class="btn btn-primary btn-block text-white" type="submit" name="btnLogStu">Login</button> -->
                         <input class="btn btn-primary btn-block text-white" type="submit" name="btnLogStu" value="Login">
@@ -48,6 +56,8 @@ require_once('connection.php');
                         <br>
 
                         <p align= "center"> Not register yet? <a href="stuRegister.php"><b> Register </p>
+
+                        
                     </form>
                 </div>
             </div>
@@ -64,4 +74,4 @@ function myFunction() {
 }
 </script>
 </body>
-</html>-
+</html>

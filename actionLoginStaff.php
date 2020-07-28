@@ -20,10 +20,11 @@ if (isset($_POST["btnLogStaff"])) {
     while($row = mysqli_fetch_array($results)){
         if($row['staffID'] == $staff_ID && $row['staffPass'] == $staff_pass){
             $_SESSION['staff_ID'] = $staff_ID;
-            header("Location: logsheet.php");
+            header("Location: indexStaff.php");
                 exit;
         }
     
+        
 
         else{
             
